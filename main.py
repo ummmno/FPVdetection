@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-i = 0
+#i = 0
 
 def findCross(img):
 	img = img[100:img.shape[0]-100, 0:img.shape[1]]
@@ -20,8 +20,8 @@ def findCross(img):
 					approx = cv2.approxPolyDP(cnt, 0.03 * cv2.arcLength(cnt, True), True)
 					if len(approx) > 9 and len(approx) < 1000:
 							cv2.drawContours(img, [cnt], 0, (0, 255, 0), 3)
-							global i
-							cv2.imwrite("./images/" + str(i) + "_" + str(cnt.size) + ".jpg", cv2.drawContours(lol, [cnt], 0, (0, 255, 0), 3))
+							#global i
+							#cv2.imwrite("./images/" + str(i) + "_" + str(cnt.size) + ".jpg", cv2.drawContours(lol, [cnt], 0, (0, 255, 0), 3))
 							i += 1
 							print("Cross detected")
 
